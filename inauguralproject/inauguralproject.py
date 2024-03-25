@@ -1,5 +1,5 @@
 from types import SimpleNamespace
-
+# creating model
 import param
 class ExchangeEconomyClass:
 

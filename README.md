@@ -1,9 +1,7 @@
 # \[Group name\]
 
 **Group members:**
-- A
-- B
-- C
+- Victor F. Rasmussen
 
 This repository contains  
 1. Inaugural project. 

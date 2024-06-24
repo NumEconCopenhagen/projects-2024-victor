@@ -1,6 +1,5 @@
 from types import SimpleNamespace
-# creating model
-import param
+
 class ExchangeEconomyClass:
 
     def __init__(self):
@@ -14,20 +13,22 @@ class ExchangeEconomyClass:
         # b. endowments
         par.w1A = 0.8
         par.w2A = 0.3
-        par.w1B = 1 - par.w1A
-        par.w2B = 1 - par.w2A
 
     def utility_A(self,x1A,x2A):
-        return x1A**self.par.alpha * x2A**(1-self.par.alpha)
+        par = self.par
+        return (x1A ** par.alpha) * (x2A ** par.beta)
 
     def utility_B(self,x1B,x2B):
-        return x1B**self.par.beta * x2B**(1-self.par.beta)
+        par = self.par
+        return (x1B ** par.beta) * (x2B ** par.alpha)
 
     def demand_A(self,p1):
-        return (self.par.alpha*p1*(self.par.w1A+self.par.w2A))/p1,((1-self.par.alpha)*(p1*self.par.w2A+self.par.w1A))
+        par = self.par
+        return par.alpha * ( par.w1A + par.w2A / p1), par.beta * (p1 * par.w1A + par.w2A)
 
     def demand_B(self,p1):
-        return (self.par.beta*(p1*self.par.w1A+self.par.w2A))/p1,((1-self.par.beta)*(p1*self.par.w2A+self.par.w1A))
+        par = self.par
+        return par.beta * (( 1 - par.w1A) +  (1 - par.w2A ) / p1), par.alpha * (p1 * (1 - par.w1A) + (1 - par.w2A))
 
     def check_market_clearing(self,p1):
 

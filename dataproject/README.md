@@ -4,7 +4,7 @@ My project is titled **Testing Black-Scholes model with historical S&P500 data**
 
 The **results** of the project can be seen from running [dataproject.ipynb](dataproject.ipynb).
 
-We apply the **following datasets**:
+I apply the **following datasets**:
 
 1. dataX.csv (*Yahoo Finance*) 
 2. dataY.csv (*Yahoo Finance*)
